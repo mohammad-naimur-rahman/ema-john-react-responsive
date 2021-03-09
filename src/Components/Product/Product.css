@@ -1,0 +1,29 @@
+.product {
+  padding: 5px;
+  display: flex;
+  border-bottom: 1px solid lightgray;
+}
+.product img {
+  width: 180px;
+  height: 100%;
+}
+.product-details {
+  padding: 10px;
+}
+.pd-name {
+  color: blue;
+  font-size: 17px;
+  font-weight: 500;
+}
+button {
+  padding: 5px 60px;
+  border-radius: 2px;
+  border: 1px solid grey;
+  color: #000;
+  background-color: goldenrod;
+}
+@media (max-width: 500px) {
+  .product {
+    flex-direction: column;
+  }
+}

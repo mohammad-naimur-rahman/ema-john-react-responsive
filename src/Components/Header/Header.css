@@ -1,0 +1,40 @@
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+.logo {
+  height: 80px;
+  margin: 20px 0;
+}
+nav {
+  margin: 20px 0;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+}
+nav ul li > * {
+  color: white;
+  padding: 5px 10px;
+  display: inline-block;
+  text-decoration: none;
+  margin: 0 15px;
+}
+nav ul li:hover {
+  background-color: goldenrod;
+  color: white;
+}
+nav ul li > *:hover {
+  color: white;
+}
+@media (max-width: 600px) {
+  .logo {
+    height: 60px;
+  }
+  nav ul {
+    flex-direction: column;
+  }
+}
