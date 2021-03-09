@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import fakeData from '../../fakeData';
 import { getDatabaseCart, processOrder, removeFromDatabaseCart } from '../../utilities/databaseManager';
 import Cart from '../Cart/Cart';
-import happyFace from '../../images/giphy.gif';
 import ReviewItem from '../ReviewItem/ReviewItem';
 
 const Review = () => {
@@ -45,7 +44,7 @@ const Review = () => {
                     cart.map(pd => <ReviewItem key={pd.key} removeProduct={removeProduct} pd={pd} />)
                 }
                 {
-                    showing && <img src={happyFace} alt="" />
+                    showing && <h2 className='text-center my-3'>Your order has been placed for shipping!<br />Thank you!!!</h2>
                 }
             </div>
             <div className="col-md-3">
