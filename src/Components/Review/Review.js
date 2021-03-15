@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router';
 import fakeData from '../../fakeData';
 import { getDatabaseCart, processOrder, removeFromDatabaseCart } from '../../utilities/databaseManager';
 import Cart from '../Cart/Cart';
@@ -8,6 +9,7 @@ const Review = () => {
     const [cart, setcart] = useState([]);
     const [placedAlready, setplacedAlready] = useState(true);
     const [showing, setshowing] = useState(false);
+    const history = useHistory();
 
     const removeProduct = pdKey => {
         const newCart = cart.filter(pd => pd.key !== pdKey);
@@ -25,11 +27,8 @@ const Review = () => {
         setcart(prevCart);
     }, [])
 
-    const placeOrder = () => {
-        processOrder();
-        setcart([]);
-        setplacedAlready(false);
-        setshowing(true);
+    const handleProceedCheckout = () => {
+        history.push('/shipment');
     }
 
 
@@ -44,12 +43,12 @@ const Review = () => {
                     cart.map(pd => <ReviewItem key={pd.key} removeProduct={removeProduct} pd={pd} />)
                 }
                 {
-                    showing && <h2 className='text-center my-3'>Your order has been placed for shipping!<br />Thank you!!!</h2>
+                    showing && <h2 className='text-center my-3 text-success'>Your order has been placed for shipping!<br />Thank you!!!</h2>
                 }
             </div>
             <div className="col-md-3">
                 <Cart newPD={cart}>
-                    <button className="add-to-cart" onClick={placeOrder}>Place Order</button>
+                    <button className="add-to-cart" onClick={handleProceedCheckout}>Proceed checkout</button>
                 </Cart>
             </div>
         </div>

@@ -22,7 +22,7 @@ button {
   color: #000;
   background-color: goldenrod;
 }
-@media (max-width: 500px) {
+@media (max-width: 800px) {
   .product {
     flex-direction: column;
   }

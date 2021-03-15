@@ -2,7 +2,8 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const ReviewItem = ({ pd, removeProduct }) => {
-    const { img, name, seller, price, stock, key } = pd;
+    const { img, name, seller, price, quantity, key } = pd;
+    console.log(pd);
     return (
 
         <div className="product">
@@ -11,7 +12,7 @@ const ReviewItem = ({ pd, removeProduct }) => {
                 <Link to={`/product/${key}`}><p className="pd-name">{name}</p></Link>
                 <p>by: {seller}</p>
                 <p className="pd-price">$ {price}</p>
-                <p><small>Only {stock} left in stock - <br /> Order soon</small></p>
+                <p><b>Quantity: </b>{quantity}</p>
                 <button onClick={() => removeProduct(key)}>Remove Item</button>
             </div>
         </div>
