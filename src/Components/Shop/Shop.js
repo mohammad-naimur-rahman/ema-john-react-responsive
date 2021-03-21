@@ -48,6 +48,14 @@ const Shop = () => {
             <div className="offset-lg-3"></div>
             <div className="col-md-6" style={{ borderRight: '1px solid lightgray' }}>
                 {
+                    products.length === 0 &&
+                    <div className='d-flex align-items-center justify-content-center w-100 h-100'>
+                        <div className="spinner-border text-primary" role="status">
+                        </div>
+                    </div>
+
+                }
+                {
                     products.map(product => <Product key={product.key} showAddToCartButton={true} pd={product} handleCart={handleCart} />)
                 }
             </div>

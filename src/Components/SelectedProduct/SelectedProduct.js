@@ -9,7 +9,15 @@ const SelectedProduct = () => {
 
     return (
         <div>
-            <Product showAddToCartButton={false} pd={product} />
+            {
+                product.length === 0 && <div className='d-flex align-items-center justify-content-center w-100 h-100'>
+                    <div className="spinner-border text-primary" role="status">
+                    </div>
+                </div >
+            }
+            {
+                product.length !== 0 && <Product showAddToCartButton={false} pd={product} />
+            }
         </div>
     );
 };
