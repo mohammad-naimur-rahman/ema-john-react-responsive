@@ -11,6 +11,7 @@ const Shipment = () => {
         console.log(data);
     };
 
+    document.title = 'Shipment';
     console.log(watch("example"));
 
     return (

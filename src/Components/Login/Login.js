@@ -87,7 +87,7 @@ function Login() {
         }
     }
 
-
+    document.title = 'Login page';
     return (
         <div>
             {

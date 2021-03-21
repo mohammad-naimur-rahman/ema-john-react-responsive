@@ -1,6 +1,8 @@
 import React from 'react';
 
 const NotFound = () => {
+
+    document.title = '404 ERROR';
     return (
         <div className='text-center text-danger'>
             <h2>Sorry, the page you are searching is not found</h2>

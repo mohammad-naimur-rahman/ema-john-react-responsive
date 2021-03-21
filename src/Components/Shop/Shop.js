@@ -42,6 +42,7 @@ const Shop = () => {
         setnewPD(newCart);
         addToDatabaseCart(product.key, count);
     }
+    document.title = 'Shop | Ema John'
 
     return (
         <div className='row'>

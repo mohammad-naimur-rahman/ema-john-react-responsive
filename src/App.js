@@ -16,6 +16,7 @@ import './App.css';
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute';
 
 export const UserContext = createContext();
+document.title = 'Ema John | React App'
 
 function App() {
   const [loggedInUser, setloggedInUser] = useState({});

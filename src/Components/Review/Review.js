@@ -31,6 +31,8 @@ const Review = () => {
         history.push('/shipment');
     }
 
+    document.title = 'Review page';
+
 
     return (
         <div className='row'>

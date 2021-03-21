@@ -7,6 +7,8 @@ const SelectedProduct = () => {
     const { pdKEY } = useParams();
     const product = fakeData.find(pd => pd.key === pdKEY);
 
+    document.title = product.name;
+
     return (
         <div>
             {
