@@ -7,7 +7,7 @@ const SelectedProduct = () => {
     const [product, setproduct] = useState({});
 
     useEffect(() => {
-        fetch('http://localhost:5000/product/' + pdKEY)
+        fetch('https://blooming-oasis-89364.herokuapp.com/product/' + pdKEY)
             .then(res => res.json())
             .then(data => setproduct(data[0]))
     }, [pdKEY])

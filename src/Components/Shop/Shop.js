@@ -10,7 +10,7 @@ const Shop = () => {
     const [newPD, setnewPD] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/products')
+        fetch('https://blooming-oasis-89364.herokuapp.com/products')
             .then(res => res.json())
             .then(data => setproducts(data));
     }, [])
@@ -18,7 +18,7 @@ const Shop = () => {
     useEffect(() => {
         const savedCart = getDatabaseCart();
         const pdKeys = Object.keys(savedCart);
-        fetch('http://localhost:5000/productByKeys', {
+        fetch('https://blooming-oasis-89364.herokuapp.com/productByKeys', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(pdKeys)

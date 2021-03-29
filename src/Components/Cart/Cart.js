@@ -21,7 +21,7 @@ const Cart = ({ newPD, children }) => {
 
     const tax = fixVal(fixVal(totalPrice) * .1);
     return (
-        <div>
+        <div style={{ position: 'sticky', top: '0', left: '0' }}>
             <h4>Order Summary</h4>
             <p><b>Items ordered: </b>{newPD.length}</p>
             <p><b>Product Price: </b>$ {fixVal(totalPrice)}</p>
