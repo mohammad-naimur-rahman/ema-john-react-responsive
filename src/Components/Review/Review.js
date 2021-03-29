@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router';
-import fakeData from '../../fakeData';
 import { getDatabaseCart, processOrder, removeFromDatabaseCart } from '../../utilities/databaseManager';
 import Cart from '../Cart/Cart';
 import ReviewItem from '../ReviewItem/ReviewItem';
@@ -19,12 +18,14 @@ const Review = () => {
     useEffect(() => {
         const savedCart = getDatabaseCart();
         const pdKeys = Object.keys(savedCart);
-        const prevCart = pdKeys.map(pdKey => {
-            const product = fakeData.find(pd => pd.key === pdKey);
-            product.quantity = savedCart[pdKey];
-            return product;
+
+        fetch('http://localhost:5000/productByKeys', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(pdKeys)
         })
-        setcart(prevCart);
+            .then(res => res.json())
+            .then(data => setcart(data));
     }, [])
 
     const handleProceedCheckout = () => {
@@ -48,7 +49,7 @@ const Review = () => {
                     showing && <h2 className='text-center my-3 text-success'>Your order has been placed for shipping!<br />Thank you!!!</h2>
                 }
             </div>
-            <div className="col-md-3">
+            <div className="col-lg-3 col-md-6">
                 <Cart newPD={cart}>
                     <button className="add-to-cart" onClick={handleProceedCheckout}>Proceed checkout</button>
                 </Cart>

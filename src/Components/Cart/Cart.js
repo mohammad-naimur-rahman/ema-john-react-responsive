@@ -2,7 +2,7 @@ import React from 'react';
 
 const Cart = ({ newPD, children }) => {
 
-    const totalPrice = newPD.reduce((total, newPD) => total + (newPD.price * newPD.quantity), 0);
+    const totalPrice = newPD.reduce((total, newPD) => total + (newPD.price * newPD.quantity || 1), 0);
 
     const fixVal = val => {
         const intVal = parseFloat(val);

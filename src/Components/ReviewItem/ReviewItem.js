@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 const ReviewItem = ({ pd, removeProduct }) => {
     const { img, name, seller, price, quantity, key } = pd;
-    console.log(pd);
     return (
 
         <div className="product">
